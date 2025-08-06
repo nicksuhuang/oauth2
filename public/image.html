@@ -1,27 +1,3772 @@
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>MS OAuth2API</title>
-    <meta name="description" content="简化操作流程">
-    <meta name="generator" content="VitePress v1.5.0">
-    <link rel="preload stylesheet" href="/assets/style.BiZM73yO.css" as="style">
-    <link rel="preload stylesheet" href="/vp-icons.css" as="style">
-    
-    <script type="module" src="/assets/app.DNy3C-pr.js"></script>
-    <link rel="preload" href="/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="modulepreload" href="/assets/chunks/theme.FZ7t4Rzd.js">
-    <link rel="modulepreload" href="/assets/chunks/framework.P9qPzDnn.js">
-    <link rel="modulepreload" href="/assets/image.md.BAAvCJgX.lean.js">
-    <link rel="icon" href="/unix.png">
-    <script>console.log("%c\u611F\u8C22\u60A8\u4F7F\u7528\u672C\u9879\u76EE\uFF01","color: #666; font-size: 11px; margin-top: 5px; margin-bottom: 5px;"),console.log("%c\u4F5C\u8005: HChaohui","color: #007BFF; font-size: 12px; font-weight: bold; margin-bottom: 5px;"),console.log("%c\u5F00\u6E90\u5730\u5740: %chttps://github.com/HChaoHui/msOauth2api","color: #007BFF; font-size: 12px; font-weight: bold;","color: #007BFF; font-size: 12px; text-decoration: underline; cursor: pointer;"),console.log("%c\u5982\u9700\u4F7F\u7528\u6216\u4FEE\u6539\u672C\u9879\u76EE\uFF0C\u8BF7\u4FDD\u7559\u4F5C\u8005\u4FE1\u606F\u3002\u611F\u8C22\u60A8\u7684\u7406\u89E3\u548C\u652F\u6301\uFF01","color: #666; font-size: 11px; margin-top: 5px; margin-bottom: 5px;");</script>
-    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
-    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
-  </head>
-  <body>
-    <div id="app"><div class="Layout" data-v-d8b57b2d><!--[--><!--]--><!--[--><span tabindex="-1" data-v-c8291ffa></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-c8291ffa> Skip to content </a><!--]--><!----><header class="VPNav" data-v-d8b57b2d data-v-7ad780c2><div class="VPNavBar" data-v-7ad780c2 data-v-9fd4d1dd><div class="wrapper" data-v-9fd4d1dd><div class="container" data-v-9fd4d1dd><div class="title" data-v-9fd4d1dd><div class="VPNavBarTitle has-sidebar" data-v-9fd4d1dd data-v-9f43907a><a class="title" href="/" data-v-9f43907a><!--[--><!--]--><!----><span data-v-9f43907a>MS OAuth2API</span><!--[--><!--]--></a></div></div><div class="content" data-v-9fd4d1dd><div class="content-body" data-v-9fd4d1dd><!--[--><!--]--><div class="VPNavBarSearch search" data-v-9fd4d1dd><!----></div><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-9fd4d1dd data-v-afb2845e><span id="main-nav-aria-label" class="visually-hidden" data-v-afb2845e> Main Navigation </span><!--[--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/" tabindex="0" data-v-afb2845e data-v-815115f5><!--[--><span data-v-815115f5>Home</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/api.html" tabindex="0" data-v-afb2845e data-v-815115f5><!--[--><span data-v-815115f5>API</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink active" href="/image.html" tabindex="0" data-v-afb2845e data-v-815115f5><!--[--><span data-v-815115f5>示例图片</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="/about.html" tabindex="0" data-v-afb2845e data-v-815115f5><!--[--><span data-v-815115f5>关于</span><!--]--></a><!--]--><!--]--></nav><!----><div class="VPNavBarAppearance appearance" data-v-9fd4d1dd data-v-3f90c1a5><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-3f90c1a5 data-v-be9742d9 data-v-b4ccac88><span class="check" data-v-b4ccac88><span class="icon" data-v-b4ccac88><!--[--><span class="vpi-sun sun" data-v-be9742d9></span><span class="vpi-moon moon" data-v-be9742d9></span><!--]--></span></span></button></div><div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-9fd4d1dd data-v-ef6192dc data-v-e71e869c><!--[--><a class="VPSocialLink no-icon" href="https://github.com/HChaoHui/msOauth2api" aria-label="github" target="_blank" rel="noopener" data-v-e71e869c data-v-60a9a2d3><span class="vpi-social-github"></span></a><a class="VPSocialLink no-icon" href="https://unix.xin" aria-label target="_blank" rel="noopener" data-v-e71e869c data-v-60a9a2d3><img src="/unix.png" width="20" height="20" /></a><!--]--></div><div class="VPFlyout VPNavBarExtra extra" data-v-9fd4d1dd data-v-f953d92f data-v-bfe7971f><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-bfe7971f><span class="vpi-more-horizontal icon" data-v-bfe7971f></span></button><div class="menu" data-v-bfe7971f><div class="VPMenu" data-v-bfe7971f data-v-20ed86d6><!----><!--[--><!--[--><!----><div class="group" data-v-f953d92f><div class="item appearance" data-v-f953d92f><p class="label" data-v-f953d92f>Appearance</p><div class="appearance-action" data-v-f953d92f><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-f953d92f data-v-be9742d9 data-v-b4ccac88><span class="check" data-v-b4ccac88><span class="icon" data-v-b4ccac88><!--[--><span class="vpi-sun sun" data-v-be9742d9></span><span class="vpi-moon moon" data-v-be9742d9></span><!--]--></span></span></button></div></div></div><div class="group" data-v-f953d92f><div class="item social-links" data-v-f953d92f><div class="VPSocialLinks social-links-list" data-v-f953d92f data-v-e71e869c><!--[--><a class="VPSocialLink no-icon" href="https://github.com/HChaoHui/msOauth2api" aria-label="github" target="_blank" rel="noopener" data-v-e71e869c data-v-60a9a2d3><span class="vpi-social-github"></span></a><a class="VPSocialLink no-icon" href="https://unix.xin" aria-label target="_blank" rel="noopener" data-v-e71e869c data-v-60a9a2d3><img src="/unix.png" width="20" height="20" /></a><!--]--></div></div></div><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-9fd4d1dd data-v-6bee1efd><span class="container" data-v-6bee1efd><span class="top" data-v-6bee1efd></span><span class="middle" data-v-6bee1efd></span><span class="bottom" data-v-6bee1efd></span></span></button></div></div></div></div><div class="divider" data-v-9fd4d1dd><div class="divider-line" data-v-9fd4d1dd></div></div></div><!----></header><div class="VPLocalNav has-sidebar empty" data-v-d8b57b2d data-v-2488c25a><div class="container" data-v-2488c25a><button class="menu" aria-expanded="false" aria-controls="VPSidebarNav" data-v-2488c25a><span class="vpi-align-left menu-icon" data-v-2488c25a></span><span class="menu-text" data-v-2488c25a>Menu</span></button><div class="VPLocalNavOutlineDropdown" style="--vp-vh:0px;" data-v-2488c25a data-v-883964e0><button data-v-883964e0>Return to top</button><!----></div></div></div><aside class="VPSidebar" data-v-d8b57b2d data-v-42c4c606><div class="curtain" data-v-42c4c606></div><nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1" data-v-42c4c606><span class="visually-hidden" id="sidebar-aria-label" data-v-42c4c606> Sidebar Navigation </span><!--[--><!--]--><!--[--><div class="no-transition group" data-v-51288d80><section class="VPSidebarItem level-0 has-active" data-v-51288d80 data-v-edd2eed8><div class="item" role="button" tabindex="0" data-v-edd2eed8><div class="indicator" data-v-edd2eed8></div><h2 class="text" data-v-edd2eed8>使用文档</h2><!----></div><div class="items" data-v-edd2eed8><!--[--><div class="VPSidebarItem level-1 is-link" data-v-edd2eed8 data-v-edd2eed8><div class="item" data-v-edd2eed8><div class="indicator" data-v-edd2eed8></div><a class="VPLink link link" href="/api.html" data-v-edd2eed8><!--[--><p class="text" data-v-edd2eed8>API</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-edd2eed8 data-v-edd2eed8><div class="item" data-v-edd2eed8><div class="indicator" data-v-edd2eed8></div><a class="VPLink link link" href="/image.html" data-v-edd2eed8><!--[--><p class="text" data-v-edd2eed8>示例图片</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-edd2eed8 data-v-edd2eed8><div class="item" data-v-edd2eed8><div class="indicator" data-v-edd2eed8></div><a class="VPLink link link" href="/about.html" data-v-edd2eed8><!--[--><p class="text" data-v-edd2eed8>关于</p><!--]--></a><!----></div><!----></div><!--]--></div></section></div><!--]--><!--[--><!--]--></nav></aside><div class="VPContent has-sidebar" id="VPContent" data-v-d8b57b2d data-v-9a6c75ad><div class="VPDoc has-sidebar has-aside" data-v-9a6c75ad data-v-e6f2a212><!--[--><!--]--><div class="container" data-v-e6f2a212><div class="aside" data-v-e6f2a212><div class="aside-curtain" data-v-e6f2a212></div><div class="aside-container" data-v-e6f2a212><div class="aside-content" data-v-e6f2a212><div class="VPDocAside" data-v-e6f2a212 data-v-cb998dce><!--[--><!--]--><!--[--><!--]--><nav aria-labelledby="doc-outline-aria-label" class="VPDocAsideOutline" data-v-cb998dce data-v-f610f197><div class="content" data-v-f610f197><div class="outline-marker" data-v-f610f197></div><div aria-level="2" class="outline-title" id="doc-outline-aria-label" role="heading" data-v-f610f197>On this page</div><ul class="VPDocOutlineItem root" data-v-f610f197 data-v-53c99d69><!--[--><!--]--></ul></div></nav><!--[--><!--]--><div class="spacer" data-v-cb998dce></div><!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]--></div></div></div></div><div class="content" data-v-e6f2a212><div class="content-container" data-v-e6f2a212><!--[--><!--]--><main class="main" data-v-e6f2a212><div style="position:relative;" class="vp-doc _image" data-v-e6f2a212><div><h3 id="邮箱在线管理示例展示" tabindex="-1"><strong>邮箱在线管理示例展示</strong> <a class="header-anchor" href="#邮箱在线管理示例展示" aria-label="Permalink to &quot;**邮箱在线管理示例展示**&quot;">​</a></h3><p>以下是一些示例图片，帮助您更好地了解本项目的功能和界面：</p><p>🖼️ <strong>仪表盘</strong>:<br><img src="/assets/1.D49zFjkx.png" alt="示例图片"></p><p>🖼️ <strong>邮箱管理</strong>:<br><img src="/assets/2.coB9tTEP.png" alt="示例图片"></p><p>🖼️ <strong>导入邮箱</strong>:<br><img src="/assets/3.BXIZ3smt.png" alt="示例图片"></p><p>🖼️ <strong>邮箱列表</strong>:<br><img src="/assets/4.BsyOQQsE.png" alt="示例图片"></p><p>🖼️ <strong>邮件列表</strong>:<br><img src="/assets/5.BhjOD8ZV.png" alt="示例图片"></p><p>🖼️ <strong>查看邮件</strong>:<br><img src="/assets/6.CffGxElt.png" alt="示例图片"></p><hr><h3 id="说明" tabindex="-1"><strong>说明</strong>： <a class="header-anchor" href="#说明" aria-label="Permalink to &quot;**说明**：&quot;">​</a></h3><ul><li>以上图片展示了本项目的主要功能和界面设计。</li><li>如果您对某些功能有疑问，欢迎通过反馈邮箱联系我们！</li></ul></div></div></main><footer class="VPDocFooter" data-v-e6f2a212 data-v-1bcd8184><!--[--><!--]--><!----><nav class="prev-next" aria-labelledby="doc-footer-aria-label" data-v-1bcd8184><span class="visually-hidden" id="doc-footer-aria-label" data-v-1bcd8184>Pager</span><div class="pager" data-v-1bcd8184><a class="VPLink link pager-link prev" href="/api.html" data-v-1bcd8184><!--[--><span class="desc" data-v-1bcd8184>Previous page</span><span class="title" data-v-1bcd8184>API</span><!--]--></a></div><div class="pager" data-v-1bcd8184><a class="VPLink link pager-link next" href="/about.html" data-v-1bcd8184><!--[--><span class="desc" data-v-1bcd8184>Next page</span><span class="title" data-v-1bcd8184>关于</span><!--]--></a></div></nav></footer><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><!----><!--[--><!--]--></div></div>
-    <script>window.__VP_HASH_MAP__=JSON.parse("{\"about.md\":\"i7yM7jI7\",\"api.md\":\"dLrLKOxz\",\"image.md\":\"BAAvCJgX\",\"index.md\":\"qx5iMkB3\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"en-US\",\"dir\":\"ltr\",\"title\":\"MS OAuth2API\",\"description\":\"简化操作流程\",\"base\":\"/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"nav\":[{\"text\":\"Home\",\"link\":\"/\"},{\"text\":\"API\",\"link\":\"/api\"},{\"text\":\"示例图片\",\"link\":\"/image\"},{\"text\":\"关于\",\"link\":\"/about\"}],\"sidebar\":[{\"text\":\"使用文档\",\"items\":[{\"text\":\"API\",\"link\":\"/api\"},{\"text\":\"示例图片\",\"link\":\"/image\"},{\"text\":\"关于\",\"link\":\"/about\"}]}],\"socialLinks\":[{\"icon\":\"github\",\"link\":\"https://github.com/HChaoHui/msOauth2api\"},{\"icon\":{\"svg\":\"<img src=\\\"/unix.png\\\" width=\\\"20\\\" height=\\\"20\\\" />\"},\"link\":\"https://unix.xin\"}]},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":false}");</script>
-    
-  </body>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>昕岐在线微软邮箱取件</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            zoom: 0.8;
+            height: 100%;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #fefefe 0%, #fefefe 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+
+        /* 顶部导航栏 */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        /* Logo 设计 */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #2c3e50;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo:hover .logo-icon {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .logo-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 导航标签页 */
+        .nav-tabs {
+            display: flex;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 4px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-tab {
+            padding: 12px 24px;
+            border: none;
+            background: transparent;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+
+            /* 移除默认的触摸反馈效果 */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none;
+
+            /* 移除焦点时的默认样式 */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .nav-tab.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .nav-tab:hover:not(.active) {
+            background: rgba(255, 255, 255, 0.9);
+            color: #475569;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 外部链接按钮 */
+        .external-link {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .external-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .external-link:hover::before {
+            left: 100%;
+        }
+
+        .external-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(245, 87, 108, 0.4);
+        }
+
+        /* 主容器 */
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 内容区域 */
+        .content-section {
+            display: none;
+            animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* 页面标题 */
+        .page-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .page-title::before {
+            content: '';
+            width: 4px;
+            height: 22px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        /* 页面副标题间距调整 */
+        .page-subtitle {
+            font-size: 16px;
+            color: #64748b;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        /* 控制面板 - 紧凑优化版本 */
+        .control-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .control-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+        }
+
+        .control-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .control-title::before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z'/%3E%3Cpolyline points='14,2 14,8 20,8'/%3E%3Cline x1='16' y1='13' x2='8' y2='13'/%3E%3Cline x1='16' y1='17' x2='8' y2='17'/%3E%3Cpolyline points='10,9 9,9 8,9'/%3E%3C/svg%3E") no-repeat center;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z'/%3E%3Cpolyline points='14,2 14,8 20,8'/%3E%3Cline x1='16' y1='13' x2='8' y2='13'/%3E%3Cline x1='16' y1='17' x2='8' y2='17'/%3E%3Cpolyline points='10,9 9,9 8,9'/%3E%3C/svg%3E") no-repeat center;
+            -webkit-mask-size: contain;
+            mask-size: contain;
+        }
+
+        /* 重新设计的上传区域 */
+        .upload-section {
+            display: flex;
+            align-items: flex-end;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .upload-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-end;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .input-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .form-input {
+            padding: 10px 14px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 13px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            outline: none;
+            color: #1f2937;
+            height: 38px;
+        }
+
+        .form-input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-1px);
+        }
+
+        .form-input::placeholder {
+            color: #9ca3af;
+            font-size: 12px;
+        }
+
+        .buttons-group {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+
+        /* 紧凑的文件选择按钮 */
+        .file-select-btn {
+            position: relative;
+            overflow: hidden;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.9);
+            color: #64748b;
+            border: 2px solid #e5e7eb;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            min-width: 100px;
+            justify-content: center;
+            height: 38px;
+            white-space: nowrap;
+        }
+
+        .file-select-btn:hover {
+            background: white;
+            border-color: #667eea;
+            color: #667eea;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .file-select-btn.has-file {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+        }
+
+        .file-select-btn.has-file:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+        }
+
+        .file-select-btn input[type="file"] {
+            display: none;
+        }
+
+        /* 紧凑的拖拽提示区域 */
+        .drag-hint {
+            width: 100%;
+            text-align: center;
+            padding: 0.75rem;
+            border: 1px dashed transparent;
+            border-radius: 6px;
+            color: #9ca3af;
+            font-size: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(249, 250, 251, 0.5);
+            margin-top: 0.75rem;
+            position: relative;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .drag-hint.dragover {
+            border-color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+            color: #667eea;
+            transform: scale(1.01);
+            box-shadow: 0 2px 12px rgba(102, 126, 234, 0.15);
+        }
+
+        .drag-hint i {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+
+        .drag-hint-text {
+            font-weight: 500;
+        }
+
+        /* 按钮优化 */
+        .btn {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            min-width: 100px;
+            justify-content: center;
+            text-decoration: none;
+            height: 38px;
+            white-space: nowrap;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease, height 0.4s ease;
+        }
+
+        .btn:active::before {
+            width: 200px;
+            height: 200px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(245, 87, 108, 0.3);
+        }
+
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(245, 87, 108, 0.4);
+        }
+
+        /* 仪表盘卡片 */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .dashboard-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .card-title {
+            font-size: 18px;
+            color: #64748b;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-value {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .card-description {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .card-description a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .card-description a:hover {
+            color: #764ba2;
+        }
+
+        /* 数据表格容器 */
+        .table-container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .table-header {
+            padding: 2rem 2rem 1rem;
+            background: rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .table-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .table-title::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z'/%3E%3C/svg%3E") no-repeat center;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z'/%3E%3C/svg%3E") no-repeat center;
+            -webkit-mask-size: contain;
+            mask-size: contain;
+        }
+
+        /* 表格样式 */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: transparent;
+        }
+
+                /* 第一列样式 - 让复选框和编号居中 */
+                .data-table td:first-child,
+        .data-table th:first-child {
+            text-align: center;
+            width: 60px;
+            min-width: 60px;
+            padding: 0.75rem 2.2rem;
+            vertical-align: middle;
+        }
+
+         /*第一列容器样式 */
+        .data-table td:first-child div,
+        .data-table th:first-child div {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 16px;
+            height: 100%;
+            min-height: 24px;
+        }
+
+        /* 确保复选框垂直对齐 */
+        .custom-checkbox {
+            width: 16px;
+            height: 16px;
+            accent-color: #667eea;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin: 0;
+            vertical-align: middle;
+        }
+
+        /* 行号样式 - 固定宽度确保对齐 */
+        .row-number {
+            font-size: 12px;
+            color: #64748b;
+            font-weight: 600;
+            min-width: 24px;
+            width: 24px;
+            text-align: center;
+            flex-shrink: 0;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        /* 表格行最小高度确保一致性 */
+        .data-table tr {
+            min-height: 48px;
+        }
+
+        .data-table td {
+            vertical-align: middle;
+            min-height: 48px;
+        }
+
+        .data-table th {
+            vertical-align: middle;
+            min-height: 48px;
+        }
+
+        /* 移动端复选框和编号优化 */
+        @media (max-width: 768px) {
+            .data-table td:first-child,
+            .data-table th:first-child {
+                width: 70px;
+                min-width: 70px;
+                padding: 0.5rem 0.25rem;
+            }
+
+            .data-table td:first-child div,
+            .data-table th:first-child div {
+                gap: 6px;
+                min-height: 20px;
+            }
+
+            .custom-checkbox {
+                width: 15px;
+                height: 15px;
+            }
+
+            .row-number {
+                font-size: 11px;
+                min-width: 20px;
+                width: 20px;
+            }
+
+            .data-table tr {
+                min-height: 44px;
+            }
+
+            .data-table td {
+                min-height: 44px;
+            }
+
+            .data-table th {
+                min-height: 44px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .data-table td:first-child,
+            .data-table th:first-child {
+                width: 60px;
+                min-width: 60px;
+                padding: 0.4rem 0.125rem;
+            }
+
+            .data-table td:first-child div,
+            .data-table th:first-child div {
+                gap: 4px;
+                min-height: 18px;
+            }
+
+            .custom-checkbox {
+                width: 14px;
+                height: 14px;
+            }
+
+            .row-number {
+                font-size: 10px;
+                min-width: 18px;
+                width: 18px;
+            }
+
+            .data-table tr {
+                min-height: 40px;
+            }
+
+            .data-table td {
+                min-height: 40px;
+            }
+
+            .data-table th {
+                min-height: 40px;
+            }
+        }
+
+
+
+
+        .data-table th,
+        .data-table td {
+            padding: 1rem 2rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 14px;
+        }
+
+        .data-table th {
+            background: rgba(255, 255, 255, 0.7);
+            color: #374151;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table tr:hover {
+            background: rgba(102, 126, 234, 0.03);
+        }
+
+        .data-table .refresh-token {
+            max-width: 150px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #64748b;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.05);
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        .data-table .actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .data-table .actions button {
+            padding: 6px 12px;
+            margin: 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+        }
+
+        .data-table .actions button.view {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .data-table .actions button.delete {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(245, 87, 108, 0.3);
+        }
+
+        .data-table .actions button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 分页控件 */
+        .pagination-container {
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.3);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .pagination {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .pagination button {
+            padding: 8px 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #374151;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 600;
+            font-size: 14px;
+            min-width: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .pagination button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .pagination button:hover:not(.active):not(:disabled) {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: #667eea;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pagination button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .pagination-info {
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+            margin: 0 1rem;
+        }
+
+        .items-per-page {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 14px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        #items-per-page {
+            padding: 8px 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #374151;
+            cursor: pointer;
+            outline: none;
+            font-size: 14px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s ease;
+        }
+
+        #items-per-page:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        /* 无数据状态 */
+        .no-data {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #9ca3af;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .no-data i {
+            font-size: 64px;
+            color: #e5e7eb;
+            margin-bottom: 1rem;
+            display: block;
+            opacity: 0.7;
+        }
+
+        /* 模态框样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modal-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .modal-content p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .mail-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .mail-modal-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            max-width: 700px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .mail-modal-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+        }
+
+        .mail-modal-content p {
+            color: #64748b;
+            margin-bottom: 1rem;
+            word-wrap: break-word;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .mail-modal-content button {
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        /* Loading 样式 */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(102, 126, 234, 0.2);
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* 动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .main-container {
+                padding: 1.5rem;
+            }
+
+            .navbar-container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .nav-tabs {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .main-container {
+                padding: 1rem;
+            }
+
+            .page-title {
+                font-size: 24px;
+            }
+
+            .upload-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .buttons-group {
+                justify-content: stretch;
+            }
+
+            .buttons-group .btn,
+            .buttons-group .file-select-btn {
+                flex: 1;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .pagination-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+
+            .table-header {
+                padding: 1.5rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 0.75rem 1rem;
+                font-size: 12px;
+            }
+
+            .data-table .actions {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .data-table .actions button {
+                padding: 4px 8px;
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar-container {
+                padding: 0.75rem;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+
+            .nav-tab {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
+            .external-link {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
+            .control-panel,
+            .table-container,
+            .modal-content {
+                border-radius: 12px;
+                margin: 0.5rem;
+                padding: 1.5rem;
+            }
+
+            .btn,
+            .file-select-btn {
+                padding: 8px 12px;
+                font-size: 12px;
+                height: 36px;
+                min-width: 80px;
+            }
+
+            .form-input {
+                padding: 8px 12px;
+                font-size: 12px;
+                height: 36px;
+            }
+
+            .dashboard-card {
+                padding: 1.5rem;
+                border-radius: 12px;
+            }
+
+            .card-value {
+                font-size: 36px;
+            }
+        }
+
+        /* 文件上传相关样式 */
+        .file-select-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .file-select-btn.has-file {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* 表格操作按钮样式 */
+        .data-table .actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .data-table .actions button {
+            padding: 6px 12px;
+            margin: 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+        }
+
+        .data-table .actions button.view {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .data-table .actions button.delete {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(245, 87, 108, 0.3);
+        }
+
+        .data-table .actions button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 复制按钮和值容器样式 */
+        .value-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            max-width: 100%;
+        }
+
+        .value-text {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .copy-icon-btn {
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            color: #667eea;
+            padding: 4px 6px;
+            border-radius: 4px;
+            font-size: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .copy-icon-btn:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: scale(1.1);
+        }
+
+        /* 邮件列表表格特殊样式 */
+    #mail-table {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    #mail-table th:nth-child(1) {
+        width: 25%;
+        text-align: left;
+    }
+
+    #mail-table th:nth-child(2) {
+        width: 40%;
+        text-align: left;
+    }
+
+    #mail-table th:nth-child(3) {
+        width: 20%;
+        text-align: left;
+    }
+
+    #mail-table th:nth-child(4) {
+        width: 15%;
+        text-align: left;
+    }
+
+    #mail-table td {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: middle;
+        text-align: left;
+    }
+
+    #mail-table td:nth-child(1) {
+        text-align: left;
+    }
+
+    #mail-table td:nth-child(2) {
+        max-width: 0;
+        position: relative;
+        text-align: left;
+    }
+
+    #mail-table td:nth-child(3) {
+        text-align: left;
+    }
+
+    #mail-table td:nth-child(4) {
+        text-align: left;
+    }
+
+    #mail-table td:nth-child(2):hover {
+        overflow: visible;
+        white-space: normal;
+        word-wrap: break-word;
+        background: rgba(102, 126, 234, 0.05);
+        z-index: 10;
+        position: relative;
+        padding: 0.75rem 1rem;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* 响应式优化 */
+    @media (max-width: 768px) {
+        #mail-table th:nth-child(1) {
+            width: 30%;
+            text-align: center;
+        }
+
+        #mail-table th:nth-child(2) {
+            width: 35%;
+            text-align: left;
+        }
+
+        #mail-table th:nth-child(3) {
+            width: 20%;
+            text-align: left;
+        }
+
+        #mail-table th:nth-child(4) {
+            width: 15%;
+            text-align: left;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #mail-table th:nth-child(1) {
+            width: 25%;
+            text-align: center;
+        }
+
+        #mail-table th:nth-child(2) {
+            width: 40%;
+            text-align: left;
+        }
+
+        #mail-table th:nth-child(3) {
+            width: 20%;
+            text-align: left;
+        }
+
+        #mail-table th:nth-child(4) {
+            width: 15%;
+            text-align: left;
+        }
+
+        #mail-table td {
+            font-size: 12px;
+            padding: 0.5rem 0.75rem;
+        }
+    }
+
+        /* 搜索状态样式 */
+        .search-status {
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1rem;
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .search-status.active {
+            display: flex;
+        }
+
+        .close-search {
+            background: none;
+            border: none;
+            color: #667eea;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 4px;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .close-search:hover {
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        /* 截断单元格样式 */
+        .truncate-cell .value-text {
+            max-width: 150px;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.05);
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        /* 统一精致的提示框样式 - 修复版本 */
+        .toast-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            pointer-events: none;
+        }
+
+        .toast {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+            min-width: 300px;
+            max-width: 500px;
+            transform: translateY(-20px) scale(0.95);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            pointer-events: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .toast.show {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .toast::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .toast.success::before {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .toast.error::before {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .toast.warning::before {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        }
+
+        .toast-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.5rem;
+        }
+
+        .toast-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .toast.success .toast-icon {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .toast.error .toast-icon {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .toast.warning .toast-icon {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        }
+
+        .toast.info .toast-icon {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .toast-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0;
+            flex: 1;
+        }
+
+        .toast-message {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+            word-break: break-word;
+        }
+
+        .toast-buttons {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            justify-content: flex-end;
+        }
+
+        .toast-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            min-width: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .toast-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease, height 0.4s ease;
+        }
+
+        .toast-btn:active::before {
+            width: 200px;
+            height: 200px;
+        }
+
+        .toast-btn.primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .toast-btn.secondary {
+            background: rgba(148, 163, 184, 0.1);
+            color: #64748b;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+        }
+
+        .toast-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 确认对话框样式 - 简化版本 */
+        .confirm-dialog {
+            background: transparent;
+            backdrop-filter: none;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: none;
+            border: none;
+            min-width: auto;
+            max-width: none;
+            text-align: center;
+            position: relative;
+            overflow: visible;
+        }
+
+        .confirm-dialog::before {
+            display: none;
+        }
+
+        .confirm-dialog .confirm-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin: 0 auto 1rem;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        }
+
+        .confirm-dialog h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .confirm-dialog p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .confirm-dialog .toast-buttons {
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .confirm-dialog .toast-btn {
+            padding: 10px 20px;
+            font-size: 14px;
+            min-width: 80px;
+        }
+
+        /* 当前邮箱信息样式 */
+        .current-email-info {
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .current-email-info .info-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .current-email-info .info-text {
+            flex: 1;
+        }
+
+        .current-email-info .info-label {
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 2px;
+        }
+
+        .current-email-info .info-value {
+            font-size: 14px;
+            color: #1e293b;
+            font-family: 'SF Mono', Monaco, monospace;
+        }
+
+        /* 修复移动端按钮点击蓝色背景闪烁问题 */
+        .nav-tab {
+            padding: 12px 24px;
+            border: none;
+            background: transparent;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+
+            /* 移除默认的触摸反馈效果 */
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none;
+
+            /* 移除焦点时的默认样式 */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        /* 确保按钮在激活状态下也不会有默认效果 */
+        .nav-tab:focus,
+        .nav-tab:active {
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* 为其他可能受影响的按钮也添加相同的修复 */
+        .btn,
+        .external-link,
+        .file-select-btn,
+        .toast-btn,
+        button {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .btn:focus,
+        .btn:active,
+        .external-link:focus,
+        .external-link:active,
+        .file-select-btn:focus,
+        .file-select-btn:active,
+        .toast-btn:focus,
+        .toast-btn:active,
+        button:focus,
+        button:active {
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* 特别针对移动端的优化 */
+        @media (max-width: 768px) {
+            .nav-tab {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                tap-highlight-color: rgba(0, 0, 0, 0);
+            }
+
+            /* 为移动端按钮添加自定义的触摸反馈效果 */
+            .nav-tab:active {
+                transform: scale(0.98);
+                opacity: 0.8;
+            }
+
+            .nav-tab.active:active {
+                transform: translateY(-1px) scale(0.98);
+            }
+        }
+
+        /* 针对iOS Safari的特殊处理 */
+        @supports (-webkit-touch-callout: none) {
+
+            .nav-tab,
+            .btn,
+            .external-link,
+            .file-select-btn,
+            .toast-btn,
+            button {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-focus-ring-color: rgba(0, 0, 0, 0);
+            }
+        }
+
+        /* 针对Android Chrome的特殊处理 */
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+
+            .nav-tab,
+            .btn,
+            .external-link,
+            .file-select-btn,
+            .toast-btn,
+            button {
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
+
+        /* 移动端表格横向滚动优化 - 方案1 */
+        @media (max-width: 768px) {
+
+            /* 表格横向滚动容器 */
+            .table-container {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .data-table {
+                min-width: 800px;
+                white-space: nowrap;
+            }
+
+            /* 固定操作列在右侧 */
+            .data-table th:last-child,
+            .data-table td:last-child {
+                position: sticky;
+                right: 0;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+            }
+
+            /* 优化操作按钮布局 */
+            .data-table .actions {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+                min-width: 80px;
+                padding: 0.5rem;
+            }
+
+            .data-table .actions button {
+                padding: 4px 8px;
+                font-size: 10px;
+                width: 100%;
+                margin: 0;
+                min-width: 60px;
+            }
+
+            /* 截断过长的文本 */
+            .data-table td {
+                max-width: 120px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding: 0.5rem 0.75rem;
+            }
+
+            .data-table th {
+                padding: 0.5rem 0.75rem;
+                font-size: 11px;
+            }
+
+            /* 复制按钮在移动端缩小 */
+            .copy-icon-btn {
+                min-width: 20px;
+                height: 20px;
+                font-size: 8px;
+                padding: 2px 4px;
+            }
+
+            .value-container {
+                gap: 4px;
+            }
+
+            .value-text {
+                max-width: 100px;
+            }
+
+            /* 截断单元格在移动端的样式 */
+            .truncate-cell .value-text {
+                max-width: 80px;
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .data-table {
+                min-width: 700px;
+            }
+
+            .data-table td {
+                max-width: 100px;
+                font-size: 11px;
+                padding: 0.4rem 0.5rem;
+            }
+
+            .data-table th {
+                font-size: 10px;
+                padding: 0.4rem 0.5rem;
+            }
+
+            .data-table .actions {
+                min-width: 70px;
+            }
+
+            .data-table .actions button {
+                font-size: 9px;
+                padding: 3px 6px;
+                min-width: 50px;
+            }
+
+            .value-text {
+                max-width: 80px;
+            }
+
+            .truncate-cell .value-text {
+                max-width: 60px;
+            }
+        }
+
+        /* 滚动提示样式 */
+        .scroll-hint {
+            display: none;
+            text-align: center;
+            padding: 0.75rem;
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            font-size: 12px;
+            font-weight: 600;
+            border-top: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .scroll-hint {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                animation: fadeInOut 3s ease-in-out;
+            }
+        }
+
+        @keyframes fadeInOut {
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* 重新设计的仪表盘布局 - 更协调的排版 */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* 欢迎卡片占据左上角 */
+        .welcome-card {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            color: #1e293b;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            min-height: 300px;
+        }
+
+        /* 邮箱总数卡片占据右上角 */
+        .dashboard-card:nth-child(2) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+
+        /* 使用指南卡片占据整个底部 */
+        .dashboard-card:nth-child(3) {
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+        }
+
+        /* 所有卡片的基础样式 */
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* 欢迎卡片顶部装饰条 */
+        .welcome-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        /* 优化后的装饰圆圈 */
+        .welcome-card::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            right: -60px;
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle at 30% 30%,
+                    rgba(102, 126, 234, 0.12) 0%,
+                    rgba(118, 75, 162, 0.08) 35%,
+                    rgba(102, 126, 234, 0.04) 60%,
+                    transparent 80%);
+            border-radius: 50%;
+            animation: floatGlow 6s ease-in-out infinite;
+        }
+
+        /* 第二个装饰圆圈 */
+        .welcome-card .decoration-circle {
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle at 70% 70%,
+                    rgba(118, 75, 162, 0.08) 0%,
+                    rgba(102, 126, 234, 0.05) 40%,
+                    transparent 70%);
+            border-radius: 50%;
+            animation: floatGlow 8s ease-in-out infinite reverse;
+            z-index: 1;
+        }
+
+        /* 第三个小装饰圆圈 */
+        .welcome-card .small-decoration {
+            position: absolute;
+            top: 45%;
+            right: 20%;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle at 50% 50%,
+                    rgba(102, 126, 234, 0.1) 0%,
+                    rgba(118, 75, 162, 0.06) 50%,
+                    transparent 75%);
+            border-radius: 50%;
+            animation: pulseGlow 4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes floatGlow {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.7;
+            }
+
+            33% {
+                transform: translate(-10px, -8px) scale(1.03);
+                opacity: 0.9;
+            }
+
+            66% {
+                transform: translate(8px, -10px) scale(0.97);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.08);
+                opacity: 0.7;
+            }
+        }
+
+        /* 其他卡片的顶部装饰线 */
+        .dashboard-card:not(.welcome-card)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .dashboard-card:not(.welcome-card):hover::before {
+            opacity: 1;
+        }
+
+        /* 卡片内容样式 */
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .card-title {
+            font-size: 18px;
+            color: #64748b;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-value {
+            font-size: 130px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .card-description {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-description a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .card-description a:hover {
+            color: #764ba2;
+        }
+
+        /* 欢迎卡片特殊内容样式 */
+        .welcome-card .card-title {
+            color: #64748b;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .welcome-content {
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .welcome-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+            position: relative;
+        }
+
+        /* 移除标题下划线 */
+        .welcome-title::after {
+            display: none;
+        }
+
+        .welcome-message {
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .welcome-features {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            /* 减少间距 */
+            margin-top: auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #475569;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            padding-left: 1rem;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .feature-item:hover {
+            color: #667eea;
+            border-left-color: #667eea;
+            background: rgba(102, 126, 234, 0.04);
+            transform: translateX(6px);
+            box-shadow: 0 2px 6px rgba(102, 126, 234, 0.06);
+        }
+
+        .feature-item i {
+            color: #10b981;
+            font-size: 16px;
+            flex-shrink: 0;
+            width: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover i {
+            transform: scale(1.05);
+        }
+
+        /* 卡片悬停效果 */
+        .dashboard-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-card:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.12);
+        }
+
+        .welcome-card:hover::after {
+            opacity: 0.9;
+            transform: translate(-5px, -5px) scale(1.05);
+            transition: all 0.4s ease;
+        }
+
+        .welcome-card:hover .decoration-circle {
+            opacity: 0.7;
+            transform: translate(3px, 3px) scale(1.03);
+            transition: all 0.4s ease;
+        }
+
+        .welcome-card:hover .small-decoration {
+            opacity: 0.8;
+            transform: scale(1.1);
+            transition: all 0.4s ease;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 1.5rem;
+            }
+
+            .welcome-card,
+            .dashboard-card:nth-child(2),
+            .dashboard-card:nth-child(3) {
+                grid-column: 1;
+                grid-row: auto;
+            }
+
+            .welcome-card {
+                min-height: auto;
+            }
+
+            .welcome-title {
+                font-size: 22px;
+            }
+
+            .welcome-message {
+                font-size: 14px;
+            }
+
+            .feature-item {
+                font-size: 13px;
+                padding: 0.4rem 0;
+            }
+
+            .dashboard-card {
+                padding: 1.5rem;
+            }
+
+            .card-value {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-title {
+                font-size: 20px;
+            }
+
+            .welcome-message {
+                font-size: 13px;
+                margin-bottom: 1rem;
+            }
+
+            .feature-item {
+                font-size: 12px;
+                padding: 0.3rem 0;
+                gap: 0.5rem;
+            }
+
+            .feature-item i {
+                font-size: 14px;
+            }
+
+            .card-value {
+                font-size: 32px;
+            }
+
+            .card-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            .card-title {
+                font-size: 16px;
+            }
+
+            .dashboard-grid {
+                gap: 1rem;
+            }
+
+            .dashboard-card {
+                padding: 1.25rem;
+            }
+        }
+
+        /* 为邮箱总数卡片添加装饰圆圈 */
+        .dashboard-card:nth-child(2)::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle at 40% 40%,
+                    rgba(102, 126, 234, 0.08) 0%,
+                    rgba(118, 75, 162, 0.05) 50%,
+                    transparent 75%);
+            border-radius: 50%;
+            animation: pulseGlow 5s ease-in-out infinite;
+        }
+
+        /* 为使用指南卡片添加多个装饰圆圈 */
+        .dashboard-card:nth-child(3)::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle at 30% 30%,
+                    rgba(102, 126, 234, 0.1) 0%,
+                    rgba(118, 75, 162, 0.06) 40%,
+                    transparent 70%);
+            border-radius: 50%;
+            animation: floatGlow 7s ease-in-out infinite;
+        }
+
+        /* 使用指南卡片添加第二个装饰圆圈 */
+        .dashboard-card:nth-child(3) .card-decoration {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle at 50% 50%,
+                    rgba(16, 185, 129, 0.08) 0%,
+                    rgba(102, 126, 234, 0.04) 60%,
+                    transparent 80%);
+            border-radius: 50%;
+            animation: pulseGlow 6s ease-in-out infinite reverse;
+            z-index: 1;
+        }
+
+        /* 使用指南卡片添加第三个小装饰圆圈 */
+        .dashboard-card:nth-child(3) .card-decoration-small {
+            position: absolute;
+            top: 60%;
+            right: 25%;
+            width: 35px;
+            height: 35px;
+            background: radial-gradient(circle at 50% 50%,
+                    rgba(118, 75, 162, 0.06) 0%,
+                    rgba(102, 126, 234, 0.03) 70%,
+                    transparent 85%);
+            border-radius: 50%;
+            animation: floatGlow 4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        /* 移动端复选框和编号优化 */
+        @media (max-width: 768px) {
+
+            /* 自定义复选框在移动端稍微大一些，便于触摸 */
+            .custom-checkbox {
+                width: 15px;
+                height: 15px;
+                margin: 0;
+            }
+
+            /* 行号在移动端稍微小一些 */
+            .row-number {
+                font-size: 11px;
+                min-width: 18px;
+            }
+
+            /* 第一列在移动端调整宽度和间距 */
+            .data-table td:first-child,
+            .data-table th:first-child {
+                width: 60px;
+                min-width: 60px;
+                padding: 0.5rem 0.25rem;
+            }
+
+            /* 第一列容器在移动端调整间距 */
+            .data-table td:first-child div,
+            .data-table th:first-child div {
+                gap: 4px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            /* 极小屏幕下进一步优化 */
+            .custom-checkbox {
+                width: 15px;
+                height: 15px;
+            }
+
+            .row-number {
+                font-size: 10px;
+                min-width: 16px;
+            }
+
+            .data-table td:first-child,
+            .data-table th:first-child {
+                width: 50px;
+                min-width: 50px;
+                padding: 0.4rem 0.125rem;
+            }
+
+            .data-table td:first-child div,
+            .data-table th:first-child div {
+                gap: 13px;
+            }
+        }
+    </style>
+    <!-- 引入Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Loading 加载效果 -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- 顶部导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-apple-whole fa-xl"></i>
+                </div>
+                <span class="logo-text">昕岐在线微软邮箱取件</span>
+            </a>
+
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-target="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    仪表盘
+                </button>
+                <button class="nav-tab" data-target="emails">
+                    <i class="fas fa-cogs"></i>
+                    邮箱管理
+                </button>
+            </div>
+
+            <a href="https://xqck.ddtmx.com" target="_blank" class="external-link">
+                <i class="fas fa-shopping-cart"></i>
+                昕岐仓库后端
+            </a>
+        </div>
+    </nav>
+
+    <!-- 主内容区域 -->
+    <main class="main-container">
+        <!-- 仪表盘内容 -->
+        <div id="dashboard" class="content-section active">
+            <h1 class="page-title">系统仪表盘</h1>
+            <p class="page-subtitle">查看邮箱系统的整体状态和统计信息</p>
+
+            <div class="dashboard-grid">
+                <!-- 欢迎卡片 -->
+                <div class="dashboard-card welcome-card">
+                    <!-- 添加装饰圆圈 -->
+                    <div class="decoration-circle"></div>
+                    <div class="small-decoration"></div>
+
+                    <div class="card-header">
+                        <div class="card-icon welcome-icon">
+                            <i class="fas fa-hand-peace"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title">欢迎使用</h3>
+                        </div>
+                    </div>
+                    <div class="welcome-content">
+                        <h2 class="welcome-title">昕岐在线微软邮箱取件</h2>
+                        <p class="welcome-message">
+                            专业的微软邮箱管理工具，让邮件收取变得简单高效
+                        </p>
+                        <div class="welcome-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>快速导入邮箱账号</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>一键查看收件箱</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>批量管理邮件</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 邮箱总数卡片 -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-mail-bulk"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title">邮箱总数</h3>
+                        </div>
+                    </div>
+                    <div class="card-value" id="account-count">0</div>
+                    <div class="card-description">当前系统中的邮箱账号总数量</div>
+                </div>
+
+                <!-- 使用指南卡片 -->
+                <div class="dashboard-card">
+                    <!-- 添加装饰圆圈 -->
+                    <div class="card-decoration"></div>
+                    <div class="card-decoration-small"></div>
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div>
+                            <h3 class="card-title">使用指南</h3>
+                        </div>
+                    </div>
+                    <div class="card-description">
+                        <p style="margin-bottom: 1rem;"><strong>导入方法：</strong>把卡网购买的令牌号复制到新建好的txt文本，然后把文本拖拽到页面提示位置或者点击
+                            [选择文件] 按钮导入文本后，再点击 [导入邮箱] 按钮即可批量导入</p>
+                        <p style="margin-bottom: 0.5rem;">如果提示内部错误或网络错误，请多重试几次</p>
+                                               
+                        <p>
+                            <strong>昕岐仓库后端：</strong>
+                            <a href="https://xqck.ddtmx.com/" target="_blank"></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 邮箱管理内容 -->
+        <div id="emails" class="content-section">
+            <h1 class="page-title">邮箱管理</h1>
+            <p class="page-subtitle">导入、管理和查看您的邮箱账号</p>
+
+            <!-- 操作控制面板 -->
+            <div class="control-panel">
+                <h2 class="control-title">
+                    邮箱导入管理
+                </h2>
+
+                <div class="upload-section">
+                    <div class="upload-controls">
+                        <!-- 分隔符输入 -->
+                        <div class="input-group">
+                            <label class="input-label" for="delimiter">分隔符</label>
+                            <input type="text" id="delimiter" class="form-input" value="----" placeholder="邮箱数据分隔符">
+                        </div>
+
+                        <!-- 搜索邮箱 -->
+                        <div class="input-group">
+                            <label class="input-label" for="search-input">搜索邮箱</label>
+                            <input type="text" id="search-input" class="form-input" placeholder="输入邮箱地址搜索">
+                        </div>
+
+                        <!-- 操作按钮组 -->
+                        <div class="buttons-group">
+                            <label class="file-select-btn" id="file-select-btn">
+                                <i class="fas fa-folder-open"></i>
+                                <span id="file-btn-text">选择文件</span>
+                                <input type="file" id="file-input" accept=".txt">
+                            </label>
+                            <button class="btn btn-primary" onclick="importEmails()">
+                                <i class="fas fa-upload"></i>
+                                导入邮箱
+                            </button>
+                            <button class="btn btn-danger" onclick="batchDelete()">
+                                <i class="fas fa-trash-alt"></i>
+                                批量删除
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 拖拽提示区域 -->
+                    <div class="drag-hint" id="drag-hint">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        或者将令牌号txt文本拖拽到此处上传
+                    </div>
+                </div>
+            </div>
+
+            <!-- 搜索状态提示 - 默认隐藏 -->
+            <div class="search-status" id="search-status" style="display: none;">
+                <span id="search-info">搜索结果: 找到 0 个匹配的邮箱</span>
+                <button class="close-search" onclick="clearSearch()" title="关闭">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- 邮箱数据表格 -->
+            <div class="table-container">
+                <div class="table-header">
+                    <h2 class="table-title">
+                        邮箱账号列表
+                    </h2>
+                </div>
+
+                <table class="data-table email-table" id="email-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div>
+                                    <input type="checkbox" id="select-all" class="custom-checkbox">
+                                    <span style="font-size: 12px; color: #64748b;">#</span>
+                                </div>
+                            </th>
+                            <th>邮箱地址</th>
+                            <th>密码</th>
+                            <th>客户端ID</th>
+                            <th>刷新令牌</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 数据将动态添加到这里 -->
+                    </tbody>
+                </table>
+
+                <!-- 添加这个滚动提示 -->
+                <div class="scroll-hint" id="scroll-hint">
+                    <i class="fas fa-arrows-alt-h"></i>
+                    <span>左右滑动查看更多</span>
+                </div>
+
+                <div class="no-data" id="no-data">
+                    <i class="fas fa-inbox"></i>
+                    <div>暂无邮箱数据</div>
+                </div>
+
+                <div class="pagination-container">
+                    <div class="items-per-page">
+                        <span>每页显示</span>
+                        <select id="items-per-page" onchange="changeItemsPerPage(this.value)">
+                            <option value="5">5 条</option>
+                            <option value="10">10 条</option>
+                            <option value="20">20 条</option>
+                            <option value="50">50 条</option>
+                            <option value="100">100 条</option>
+                            <option value="200">200 条</option>
+                        </select>
+                    </div>
+                    <div class="pagination" id="pagination">
+                        <!-- 分页按钮将动态生成 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 通用模态框 -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h3 id="modal-title"></h3>
+            <p id="modal-message"></p>
+            <button class="btn btn-primary" onclick="closeModal()">确认</button>
+        </div>
+    </div>
+
+    <!-- 邮件详情模态框 -->
+    <div class="mail-modal" id="mail-modal">
+        <div class="mail-modal-content">
+            <h3 id="mail-modal-title"></h3>
+            <p id="mail-modal-sender"></p>
+            <p id="mail-modal-subject"></p>
+            <p id="mail-modal-date"></p>
+            <p id="mail-modal-content"></p>
+            <button class="btn btn-primary" onclick="closeMailModal()">关闭</button>
+        </div>
+    </div>
+
+    <script>
+        // 全局变量
+        let currentPage = 1;
+        let itemsPerPage = 5;
+        let mailData = [];
+        let currentMailPage = 1;
+        const mailItemsPerPage = 10;
+        let currentEmailInfo = null; // 当前查看的邮箱信息
+
+        // 搜索相关变量
+        let isSearching = false;
+        let searchResults = [];
+        let originalData = [];
+
+        // 显示加载动画
+        function showLoading() {
+            document.getElementById('loading-overlay').style.display = 'flex';
+        }
+
+        // 隐藏加载动画
+        function hideLoading() {
+            document.getElementById('loading-overlay').style.display = 'none';
+        }
+
+        // 创建Toast容器
+        function createToastContainer() {
+            let container = document.getElementById('toast-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'toast-container';
+                container.className = 'toast-container';
+                document.body.appendChild(container);
+            }
+            return container;
+        }
+
+        // 统一的提示框函数
+        function showToast(title, message, type = 'info', buttons = null) {
+            const container = createToastContainer();
+
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+
+            const iconMap = {
+                success: 'fas fa-check',
+                error: 'fas fa-times',
+                warning: 'fas fa-exclamation',
+                info: 'fas fa-info'
+            };
+
+            toast.innerHTML = `
+        <div class="toast-header">
+            <div class="toast-icon">
+                <i class="${iconMap[type] || iconMap.info}"></i>
+            </div>
+            <h4 class="toast-title">${title}</h4>
+        </div>
+        <p class="toast-message">${message}</p>
+        ${buttons ? `<div class="toast-buttons">${buttons}</div>` : ''}
+    `;
+
+            container.appendChild(toast);
+
+            // 触发显示动画
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 10);
+
+            // 如果没有按钮，3秒后自动关闭
+            if (!buttons) {
+                setTimeout(() => {
+                    closeToast(toast);
+                }, 3000);
+            }
+
+            return toast;
+        }
+
+        // 关闭Toast
+        function closeToast(toast) {
+            toast.classList.remove('show');
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.parentNode.removeChild(toast);
+                }
+            }, 300);
+        }
+
+        // 确认对话框 - 简化版本
+        function showConfirm(title, message, onConfirm, onCancel = null) {
+            const container = createToastContainer();
+
+            const dialog = document.createElement('div');
+            dialog.className = 'toast warning'; // 使用warning类型的toast样式
+
+            dialog.innerHTML = `
+        <div class="confirm-dialog">
+            <div class="confirm-icon">
+                <i class="fas fa-question"></i>
+            </div>
+            <h3>${title}</h3>
+            <p>${message}</p>
+            <div class="toast-buttons">
+                <button class="toast-btn secondary" onclick="handleConfirmCancel(this)">取消</button>
+                <button class="toast-btn primary" onclick="handleConfirmOk(this)">确认</button>
+            </div>
+        </div>
+    `;
+
+            // 存储回调函数
+            dialog._onConfirm = onConfirm;
+            dialog._onCancel = onCancel;
+
+            container.appendChild(dialog);
+
+            setTimeout(() => {
+                dialog.classList.add('show');
+            }, 10);
+
+            return dialog;
+        }
+
+        // 处理确认对话框的确认按钮
+        function handleConfirmOk(button) {
+            const dialog = button.closest('.toast');
+            if (dialog._onConfirm) {
+                dialog._onConfirm();
+            }
+            closeToast(dialog);
+        }
+
+        // 处理确认对话框的取消按钮
+        function handleConfirmCancel(button) {
+            const dialog = button.closest('.toast');
+            if (dialog._onCancel) {
+                dialog._onCancel();
+            }
+            closeToast(dialog);
+        }
+
+        // 页面初始化
+        document.addEventListener('DOMContentLoaded', function () {
+            // 导航标签切换
+            const navTabs = document.querySelectorAll('.nav-tab');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            navTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    navTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const targetId = tab.getAttribute('data-target');
+                    contentSections.forEach(section => section.classList.remove('active'));
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // 文件上传处理
+            initFileUpload();
+
+            // 搜索功能
+            initSearch();
+
+            // 全选功能
+            initSelectAll();
+
+            // 拖拽功能
+            initDragDrop();
+
+            // 加载数据
+            loadData();
+        });
+
+        // 初始化文件上传
+        function initFileUpload() {
+            const fileInput = document.getElementById('file-input');
+            const fileSelectBtn = document.getElementById('file-select-btn');
+            const fileBtnText = document.getElementById('file-btn-text');
+
+            if (fileInput && fileSelectBtn && fileBtnText) {
+                fileInput.addEventListener('change', function () {
+                    if (this.files.length > 0) {
+                        fileBtnText.textContent = this.files[0].name;
+                        fileSelectBtn.classList.add('has-file');
+                    } else {
+                        fileBtnText.textContent = '选择文件';
+                        fileSelectBtn.classList.remove('has-file');
+                    }
+                });
+            }
+        }
+
+        // 初始化搜索功能
+        function initSearch() {
+            const searchInput = document.getElementById('search-input');
+            if (searchInput) {
+                searchInput.addEventListener('input', function () {
+                    const query = this.value.trim().toLowerCase();
+                    if (query) {
+                        performSearch(query);
+                    } else {
+                        clearSearch();
+                    }
+                });
+            }
+        }
+
+        // 搜索功能
+        function performSearch(query) {
+            const data = JSON.parse(localStorage.getItem('emailData')) || [];
+            originalData = data;
+            searchResults = data.filter(item =>
+                item.email.toLowerCase().includes(query)
+            );
+
+            isSearching = true;
+            currentPage = 1;
+
+            // 显示搜索状态
+            const searchStatus = document.getElementById('search-status');
+            const searchInfo = document.getElementById('search-info');
+            if (searchStatus && searchInfo) {
+                searchInfo.textContent = `搜索结果: 找到 ${searchResults.length} 个匹配的邮箱`;
+                searchStatus.style.display = 'flex';
+            }
+
+            renderTable(originalData);
+        }
+
+        // 清除搜索
+        function clearSearch() {
+            isSearching = false;
+            searchResults = [];
+            originalData = [];
+            currentPage = 1;
+
+            const searchInput = document.getElementById('search-input');
+            const searchStatus = document.getElementById('search-status');
+
+            if (searchInput) searchInput.value = '';
+            if (searchStatus) searchStatus.style.display = 'none';
+
+            const data = JSON.parse(localStorage.getItem('emailData')) || [];
+            renderTable(data);
+        }
+
+        // 初始化全选功能
+        function initSelectAll() {
+            const selectAllCheckbox = document.getElementById('select-all');
+            if (selectAllCheckbox) {
+                selectAllCheckbox.addEventListener('change', function () {
+                    const checkboxes = document.querySelectorAll('#email-table tbody input[type="checkbox"]');
+                    checkboxes.forEach(checkbox => {
+                        checkbox.checked = this.checked;
+                    });
+                    updateSelectedItems();
+                });
+            }
+
+            // 监听表格内复选框变化
+            document.addEventListener('change', function (event) {
+                if (event.target.matches('#email-table tbody input[type="checkbox"]')) {
+                    updateSelectedItems();
+                }
+            });
+        }
+
+        // 初始化拖拽功能
+        function initDragDrop() {
+            const dragHint = document.getElementById('drag-hint');
+            const fileInput = document.getElementById('file-input');
+
+            if (dragHint && fileInput) {
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                    dragHint.addEventListener(eventName, preventDefaults, false);
+                    document.body.addEventListener(eventName, preventDefaults, false);
+                });
+
+                ['dragenter', 'dragover'].forEach(eventName => {
+                    dragHint.addEventListener(eventName, highlight, false);
+                });
+
+                ['dragleave', 'drop'].forEach(eventName => {
+                    dragHint.addEventListener(eventName, unhighlight, false);
+                });
+
+                dragHint.addEventListener('drop', handleDrop, false);
+            }
+
+            function preventDefaults(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+
+            function highlight(e) {
+                dragHint.classList.add('dragover');
+            }
+
+            function unhighlight(e) {
+                dragHint.classList.remove('dragover');
+            }
+
+            function handleDrop(e) {
+                const dt = e.dataTransfer;
+                const files = dt.files;
+
+                if (files.length > 0) {
+                    fileInput.files = files;
+                    const event = new Event('change', { bubbles: true });
+                    fileInput.dispatchEvent(event);
+                }
+            }
+        }
+
+        // 存储选中的项
+        let selectedItems = [];
+
+        // 更新选中的项
+        function updateSelectedItems() {
+            const checkboxes = document.querySelectorAll('#email-table tbody input[type="checkbox"]:checked');
+            selectedItems = Array.from(checkboxes).map(checkbox => {
+                return parseInt(checkbox.dataset.index);
+            });
+        }
+
+        // 从 localStorage 加载数据
+        function loadData() {
+            const data = JSON.parse(localStorage.getItem('emailData')) || [];
+            renderTable(data);
+            updateDashboard(data);
+        }
+
+        // 渲染表格
+        function renderTable(data) {
+            const tbody = document.querySelector('#email-table tbody');
+            const noDataDiv = document.getElementById('no-data');
+
+            const displayData = isSearching ? searchResults : data;
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const pageData = displayData.slice(startIndex, endIndex);
+
+            if (displayData.length === 0) {
+                tbody.innerHTML = '';
+                noDataDiv.style.display = 'block';
+                document.querySelector('.pagination-container').style.display = 'none';
+            } else {
+                noDataDiv.style.display = 'none';
+                document.querySelector('.pagination-container').style.display = 'flex';
+
+                tbody.innerHTML = pageData.map((item, index) => {
+                    const originalIndex = isSearching ?
+                        (originalData || data).findIndex(originalItem =>
+                            originalItem.email === item.email &&
+                            originalItem.refreshToken === item.refreshToken
+                        ) :
+                        startIndex + index;
+
+                    return `
+                <tr>
+                    <td>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <input type="checkbox" class="row-checkbox custom-checkbox" data-index="${originalIndex}">
+                            <span class="row-number">${isSearching ? originalIndex + 1 : startIndex + index + 1}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="value-container">
+                            <span class="value-text">${item.email || ''}</span>
+                            <button class="copy-icon-btn" onclick="copyToClipboard('${(item.email || '').replace(/'/g, '\\\'').replace(/"/g, '\\"')}', this)" title="复制">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="value-container">
+                            <span class="value-text">${item.password || ''}</span>
+                            <button class="copy-icon-btn" onclick="copyToClipboard('${(item.password || '').replace(/'/g, '\\\'').replace(/"/g, '\\"')}', this)" title="复制">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </td>
+                    <td class="truncate-cell">
+                        <div class="value-container">
+                            <span class="value-text">${item.clientId || ''}</span>
+                            <button class="copy-icon-btn" onclick="copyToClipboard('${(item.clientId || '').replace(/'/g, '\\\'').replace(/"/g, '\\"')}', this)" title="复制">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </td>
+                    <td class="truncate-cell">
+                        <div class="value-container">
+                            <span class="value-text">${item.refreshToken || ''}</span>
+                            <button class="copy-icon-btn" onclick="copyToClipboard('${(item.refreshToken || '').replace(/'/g, '\\\'').replace(/"/g, '\\"')}', this)" title="复制">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </td>
+                    <td class="actions">
+                        <button class="view" onclick="viewInbox(${originalIndex})">收件箱</button>
+                        <button class="view" onclick="viewJunk(${originalIndex})">垃圾箱</button>
+                        <button class="delete" onclick="deleteEmail(${originalIndex})">删除</button>
+                    </td>
+                </tr>
+            `;
+                }).join('');
+            }
+
+            renderPagination(displayData.length);
+            updateSelectedItems();
+        }
+
+        // 批量删除
+        function batchDelete() {
+            if (selectedItems.length === 0) {
+                showToast('提示', '请选择要删除的项！', 'warning');
+                return;
+            }
+
+            const itemsToDeleteCount = selectedItems.length; // 保存删除前的数量
+
+            showConfirm(
+                '确认删除',
+                `确定要删除选中的 ${itemsToDeleteCount} 项吗？此操作不可恢复。`,
+                function () {
+                    const data = JSON.parse(localStorage.getItem('emailData')) || [];
+                    const filteredData = data.filter((item, index) => !selectedItems.includes(index));
+                    localStorage.setItem('emailData', JSON.stringify(filteredData));
+
+                    // 如果在搜索状态，需要清除搜索
+                    if (isSearching) {
+                        clearSearch();
+                    }
+
+                    loadData();
+                    showToast('删除成功', `成功删除 ${itemsToDeleteCount} 项。`, 'success');
+                    selectedItems = [];
+                }
+            );
+        }
+
+        // 删除单个邮箱
+        function deleteEmail(index) {
+            showConfirm(
+                '确认删除',
+                '确定要删除这个邮箱吗？此操作不可恢复。',
+                function () {
+                    const data = JSON.parse(localStorage.getItem('emailData')) || [];
+                    data.splice(index, 1);
+                    localStorage.setItem('emailData', JSON.stringify(data));
+
+                    // 如果在搜索状态，需要清除搜索
+                    if (isSearching) {
+                        clearSearch();
+                    }
+
+                    loadData();
+                    showToast('删除成功', '邮箱已成功删除。', 'success');
+                }
+            );
+        }
+        // 查看收件箱
+        function viewInbox(index) {
+            const data = JSON.parse(localStorage.getItem('emailData')) || [];
+            const item = data[index];
+            if (item) {
+                currentEmailInfo = {
+                    email: item.email,
+                    mailbox: '收件箱'
+                };
+                currentMailPage = 1;
+                loadMailList(item.refreshToken, item.clientId, item.email, 'INBOX');
+            }
+        }
+
+        // 查看垃圾箱
+        function viewJunk(index) {
+            const data = JSON.parse(localStorage.getItem('emailData')) || [];
+            const item = data[index];
+            if (item) {
+                currentEmailInfo = {
+                    email: item.email,
+                    mailbox: '垃圾箱'
+                };
+                currentMailPage = 1;
+                loadMailList(item.refreshToken, item.clientId, item.email, 'Junk');
+            }
+        }
+
+        // 加载邮件列表
+        function loadMailList(refreshToken, clientId, email, mailbox) {
+            showLoading();
+            const password = localStorage.getItem('password') || '';
+            const apiUrl = `/api/mail-all?refresh_token=${refreshToken}&client_id=${clientId}&email=${email}&mailbox=${mailbox}&response_type=json&password=${password}`;
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        if (response.status === 500) {
+                            return response.json().then(errorData => {
+                                if (errorData.data && errorData.data.error === "Nothing to fetch") {
+                                    mailData = [];
+                                    showMailListSection();
+                                    return Promise.resolve();
+                                } else {
+                                    throw new Error('服务器内部错误，请稍后重试。');
+                                }
+                            });
+                        } else if (response.status === 401) {
+                            throw new Error('UNAUTHORIZED');
+                        } else {
+                            throw new Error(`请求失败，状态码：${response.status}`);
+                        }
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data) {
+                        mailData = data.data || [];
+                        showMailListSection();
+                    }
+                })
+                .catch(error => {
+                    if (error.message === 'UNAUTHORIZED') {
+                        showToast('提示', '为了防止滥用，已增加密码验证功能。如需使用，请联系管理员获取密码或自行搭建服务。', 'warning');
+                    } else {
+                        showToast('错误', '无法加载邮件数据，请检查网络连接或稍后重试。', 'error');
+                    }
+                })
+                .finally(() => {
+                    hideLoading();
+                });
+        }
+
+        // 显示邮件列表区域
+        function showMailListSection() {
+            // 切换到一个新的独立页面，而不是在邮箱管理下显示
+            const navTabs = document.querySelectorAll('.nav-tab');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            // 移除所有导航标签的激活状态
+            navTabs.forEach(tab => tab.classList.remove('active'));
+            // 隐藏所有内容区域
+            contentSections.forEach(section => section.classList.remove('active'));
+
+            // 检查是否已存在邮件列表区域
+            let mailListSection = document.getElementById('mail-list');
+            if (!mailListSection) {
+                // 创建邮件列表区域
+                mailListSection = document.createElement('div');
+                mailListSection.id = 'mail-list';
+                mailListSection.className = 'content-section';
+                mailListSection.innerHTML = `
+            <h1 class="page-title">邮件列表</h1>
+            <p class="page-subtitle">查看收到的邮件内容</p>
+            
+            <!-- 返回按钮 -->
+            <div style="margin-bottom: 1.5rem;">
+                <button class="btn btn-primary" onclick="backToEmailManagement()">
+                    <i class="fas fa-arrow-left"></i>
+                    返回邮箱管理
+                </button>
+            </div>
+            
+            <!-- 当前邮箱信息 -->
+            <div class="current-email-info">
+                <div class="info-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info-text">
+                    <div class="info-label">当前查看</div>
+                    <div class="info-value" id="current-email-display"></div>
+                </div>
+            </div>
+            
+            <div class="table-container">
+                <div class="table-header">
+                    <h2 class="table-title">邮件列表</h2>
+                </div>
+                <table class="data-table" id="mail-table">
+                    <thead>
+                        <tr>
+                            <th>发件人</th>
+                            <th>主题</th>
+                            <th>日期</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="no-data" id="no-mail-data">
+                    <i class="fas fa-envelope-open"></i>
+                    <div>暂无邮件数据</div>
+                </div>
+                <div class="pagination-container">
+                    <div class="pagination" id="pagination-mail"></div>
+                </div>
+            </div>
+        `;
+                document.querySelector('.main-container').appendChild(mailListSection);
+            }
+
+            // 更新当前邮箱信息显示
+            const currentEmailDisplay = document.getElementById('current-email-display');
+            if (currentEmailDisplay && currentEmailInfo) {
+                currentEmailDisplay.textContent = `${currentEmailInfo.email} - ${currentEmailInfo.mailbox}`;
+            }
+
+            mailListSection.classList.add('active');
+            renderMailTable(mailData);
+        }
+
+        // 返回邮箱管理页面
+        function backToEmailManagement() {
+            const navTabs = document.querySelectorAll('.nav-tab');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            // 移除所有导航标签和内容区域的激活状态
+            navTabs.forEach(tab => tab.classList.remove('active'));
+            contentSections.forEach(section => section.classList.remove('active'));
+
+            // 激活邮箱管理标签和内容
+            const emailTab = document.querySelector('[data-target="emails"]');
+            const emailSection = document.getElementById('emails');
+
+            if (emailTab) emailTab.classList.add('active');
+            if (emailSection) emailSection.classList.add('active');
+        }
+
+        // 渲染邮件表格
+        function renderMailTable(data) {
+            const tbody = document.querySelector('#mail-table tbody');
+            const noDataDiv = document.getElementById('no-mail-data');
+
+            if (!tbody) return;
+
+            if (data.length === 0) {
+                tbody.innerHTML = '';
+                noDataDiv.style.display = 'block';
+                document.querySelector('#mail-list .pagination-container').style.display = 'none';
+                return;
+            }
+
+            noDataDiv.style.display = 'none';
+            document.querySelector('#mail-list .pagination-container').style.display = 'flex';
+
+            const start = (currentMailPage - 1) * mailItemsPerPage;
+            const end = start + mailItemsPerPage;
+            const pageData = data.slice(start, end);
+
+            tbody.innerHTML = pageData.map((item, index) => `
+        <tr>
+            <td>${item.send || ''}</td>
+            <td>${item.subject || ''}</td>
+            <td>${item.date || ''}</td>
+            <td class="actions">
+                <button class="view" onclick="viewMail(${start + index})">查看</button>
+            </td>
+        </tr>
+    `).join('');
+
+            renderMailPagination(data.length);
+        }
+
+        // 渲染邮件分页
+        function renderMailPagination(totalItems) {
+            const pagination = document.getElementById('pagination-mail');
+            if (!pagination) return;
+
+            pagination.innerHTML = '';
+            const totalPages = Math.ceil(totalItems / mailItemsPerPage);
+
+            for (let i = 1; i <= totalPages; i++) {
+                const button = document.createElement('button');
+                button.textContent = i;
+                if (i === currentMailPage) {
+                    button.classList.add('active');
+                }
+                button.onclick = () => changeMailPage(i);
+                pagination.appendChild(button);
+            }
+        }
+
+        // 切换邮件分页
+        function changeMailPage(page) {
+            currentMailPage = page;
+            renderMailTable(mailData);
+        }
+
+        // 查看邮件详情
+        function viewMail(index) {
+            const item = mailData[index];
+            if (item) {
+                document.getElementById('mail-modal-title').textContent = item.subject || '';
+                document.getElementById('mail-modal-sender').textContent = `发件人: ${item.send || ''}`;
+                document.getElementById('mail-modal-subject').textContent = `主题: ${item.subject || ''}`;
+                document.getElementById('mail-modal-date').textContent = `日期: ${item.date || ''}`;
+                document.getElementById('mail-modal-content').innerHTML = `内容: ${item.html || item.text || ''}`;
+                document.getElementById('mail-modal').style.display = 'flex';
+            }
+        }
+
+        // 关闭邮件模态框
+        function closeMailModal() {
+            document.getElementById('mail-modal').style.display = 'none';
+        }
+
+        // 渲染分页控件
+        function renderPagination(totalItems) {
+            const pagination = document.getElementById('pagination');
+            if (!pagination) return;
+
+            pagination.innerHTML = '';
+            const totalPages = Math.ceil(totalItems / itemsPerPage);
+            const maxButtons = 5;
+
+            let startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
+            let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+
+            if (endPage - startPage + 1 < maxButtons) {
+                startPage = Math.max(1, endPage - maxButtons + 1);
+            }
+
+            // 上一页
+            if (currentPage > 1) {
+                const prevButton = document.createElement('button');
+                prevButton.textContent = '上一页';
+                prevButton.onclick = () => changePage(currentPage - 1);
+                pagination.appendChild(prevButton);
+            }
+
+            // 第一页
+            if (startPage > 1) {
+                const firstButton = document.createElement('button');
+                firstButton.textContent = '1';
+                firstButton.onclick = () => changePage(1);
+                pagination.appendChild(firstButton);
+
+                if (startPage > 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    pagination.appendChild(ellipsis);
+                }
+            }
+
+            // 页码按钮
+            for (let i = startPage; i <= endPage; i++) {
+                const button = document.createElement('button');
+                button.textContent = i;
+                if (i === currentPage) {
+                    button.classList.add('active');
+                }
+                button.onclick = () => changePage(i);
+                pagination.appendChild(button);
+            }
+
+            // 最后一页
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    pagination.appendChild(ellipsis);
+                }
+
+                const lastButton = document.createElement('button');
+                lastButton.textContent = totalPages;
+                lastButton.onclick = () => changePage(totalPages);
+                pagination.appendChild(lastButton);
+            }
+
+            // 下一页
+            if (currentPage < totalPages) {
+                const nextButton = document.createElement('button');
+                nextButton.textContent = '下一页';
+                nextButton.onclick = () => changePage(currentPage + 1);
+                pagination.appendChild(nextButton);
+            }
+        }
+
+        // 切换分页
+        function changePage(page) {
+            currentPage = page;
+            const data = JSON.parse(localStorage.getItem('emailData')) || [];
+            renderTable(data);
+        }
+
+        // 更改每页显示条数
+        function changeItemsPerPage(value) {
+            itemsPerPage = parseInt(value, 10);
+            currentPage = 1;
+            const data = JSON.parse(localStorage.getItem('emailData')) || [];
+            renderTable(data);
+        }
+
+        // 导入邮箱
+        function importEmails() {
+            const delimiter = document.getElementById('delimiter').value.trim();
+            const fileInput = document.getElementById('file-input');
+
+            if (!delimiter) {
+                showToast('错误', '请输入分隔符！', 'error');
+                return;
+            }
+
+            if (!fileInput.files || fileInput.files.length === 0) {
+                showToast('错误', '请选择文件！', 'error');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const content = e.target.result;
+                const lines = content.split('\n');
+
+                // 验证邮箱格式
+                const linesToCheck = Math.min(5, lines.length);  
+                for (let i = 0; i < linesToCheck; i++) {
+                    if (!lines[i].trim()) continue;  
+                
+                    const fields = lines[i].split(delimiter);  
+                    if (fields.length < 2) continue;  
+                
+                    const email = fields[0].trim();  
+                    const password = fields[1].trim();  
+                
+                    const match = email.match(/^([^@]+)@/);  
+                    if (!match) {
+                        showToast('错误', '邮箱格式不正确！', 'error');
+                        return;
+                    }
+                
+                    const prefix = match[1];
+                    if (prefix.length < 6) {
+                        showToast('错误', '邮箱前缀长度不足6位！', 'error');
+                        return;
+                    }
+                
+                    const last6 = prefix.substring(prefix.length - 6);
+                
+                    const pattern1 = /^\d{5}[a-zA-Z]$/;
+                    const pattern2 = /^[a-zA-Z]\d{4}[a-zA-Z]$/;
+                    const pattern3 = /^[a-z]\d{5}$/;
+                
+                    if (!pattern1.test(last6) && !pattern2.test(last6) && !pattern3.test(last6)) {
+                        showModal('错误', '请联系对接人购买邮箱！');
+                        return;
+                    }
+                
+                    // 新增
+                    const passwordPattern = /^[a-zA-Z]{2}\d{6}$/;
+                    if (!passwordPattern.test(password)) {
+                        showToast('错误', '请联系对接人购买邮箱！');
+                        return;
+                    }
+                }
+
+
+                const data = JSON.parse(localStorage.getItem('emailData')) || [];
+                let importedCount = 0;
+
+                lines.forEach(line => {
+                    if (!line.trim()) return;
+
+                    const fields = line.split(delimiter);
+                    if (fields.length >= 4) {
+                        const email = fields[0].trim();
+                        const password = fields[1].trim();
+                        const clientId = fields[2].trim();
+                        const refreshToken = fields[3].trim();
+
+                        if (email && password && clientId && refreshToken) {
+                            data.push({ email, password, clientId, refreshToken });
+                            importedCount++;
+                        }
+                    }
+                });
+
+                localStorage.setItem('emailData', JSON.stringify(data));
+                loadData();
+                showToast('导入成功', `成功导入 ${importedCount} 条数据！`, 'success');
+
+                // 重置文件输入
+                fileInput.value = '';
+                const fileBtnText = document.getElementById('file-btn-text');
+                const fileSelectBtn = document.getElementById('file-select-btn');
+                if (fileBtnText) fileBtnText.textContent = '选择文件';
+                if (fileSelectBtn) fileSelectBtn.classList.remove('has-file');
+            };
+
+            reader.readAsText(file);
+        }
+
+        // 复制到剪贴板
+        function copyToClipboard(text, buttonElement) {
+            if (!navigator.clipboard) {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                textArea.style.opacity = "0";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showTemporaryFeedback(buttonElement, true);
+                } catch (err) {
+                    showTemporaryFeedback(buttonElement, false);
+                }
+                document.body.removeChild(textArea);
+                return;
+            }
+
+            navigator.clipboard.writeText(text).then(function () {
+                showTemporaryFeedback(buttonElement, true);
+            }, function (err) {
+                showTemporaryFeedback(buttonElement, false);
+            });
+        }
+
+        // 显示临时反馈
+        function showTemporaryFeedback(buttonElement, success) {
+            const originalIcon = buttonElement.innerHTML;
+            const originalColor = buttonElement.style.color;
+
+            if (success) {
+                buttonElement.innerHTML = '<i class="fas fa-check"></i>';
+                buttonElement.style.color = '#10b981';
+            } else {
+                buttonElement.innerHTML = '<i class="fas fa-times"></i>';
+                buttonElement.style.color = '#f5576c';
+            }
+
+            setTimeout(() => {
+                buttonElement.innerHTML = originalIcon;
+                buttonElement.style.color = originalColor;
+            }, 1500);
+        }
+
+        // 兼容原有的模态框函数
+        function showModal(title, message) {
+            showToast(title, message, 'info');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // 更新仪表盘数据
+        function updateDashboard(data) {
+            const accountCountElement = document.getElementById('account-count');
+            if (accountCountElement) {
+                accountCountElement.textContent = data.length;
+            }
+        }
+
+        // 点击模态框外部关闭
+        window.addEventListener('click', function (event) {
+            const modal = document.getElementById('modal');
+            const mailModal = document.getElementById('mail-modal');
+
+            if (event.target === modal) {
+                closeModal();
+            }
+            if (event.target === mailModal) {
+                closeMailModal();
+            }
+        });
+    </script>
+</body>
+
 </html>
